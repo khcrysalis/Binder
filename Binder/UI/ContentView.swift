@@ -10,7 +10,7 @@ import AppKit
 
 struct ContentView: View {
     @State private var selectedImageIndex: Int?
-    @State private var refreshCollectionView = false // Add this state variable
+    @State private var refreshCollectionView = false
     let path = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
     var imageFiles: [URL] {
         return path?.getAllImageFiles() ?? []
