@@ -30,7 +30,7 @@ struct CollectionView: View {
                                 thumbnail
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: Preferences.thumbnailSize!, height: Preferences.thumbnailSize ?? 150)
+                                    .frame(width: Preferences.thumbnailSize!, height: Preferences.thumbnailSize!)
                                     .cornerRadius(10)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 10)
