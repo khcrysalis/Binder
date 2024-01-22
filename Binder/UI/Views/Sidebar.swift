@@ -53,10 +53,11 @@ struct Sidebar: View {
                     RoundedRectangle(cornerRadius: 7)
                         .stroke(Color.accentColor, lineWidth: 1)
                 )
-        )
+        ).shadow(color: Color.accentColor.opacity(1), radius: 50, x: 0, y: 0)
         .buttonStyle(.plain)
         .padding(.horizontal, 8)
         .padding(.bottom, 8)
+
     }
     
     func selectFolder() {

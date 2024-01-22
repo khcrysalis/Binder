@@ -22,10 +22,10 @@ struct AboutView: View {
                     .interpolation(.high)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 140, height: 140)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
             }
             
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .center, spacing: 10) {
                 Text((info["CFBundleName"] as? String) ?? "")
                     .font(Font.system(size: 33))
                 
@@ -40,6 +40,11 @@ struct AboutView: View {
                 
                 Divider()
                 CreditsView()
+                Divider()
+                HStack {
+                    customButton(action: showWebsite, label: "Source")
+                    customButton(action: showInfo, label: "Wiki")
+                }
             }
             .padding()
             .frame(maxWidth: .infinity)
@@ -55,6 +60,23 @@ struct AboutView: View {
             return iconImage
         }
         return nil
+    }
+    
+    func customButton(action: @escaping () -> Void, label: String) -> some View {
+        Button(action: action) {
+            Text(label)
+                .frame(maxWidth: .infinity)
+        }
+    }
+    
+    func showWebsite() {
+        let website = URL(string: "https://github.com/ssalggnikool/Binder")!
+        NSWorkspace.shared.open(website)
+    }
+    
+    func showInfo() {
+        let docs = URL(string: "https://github.com/ssalggnikool/Binder")!
+        NSWorkspace.shared.open(docs)
     }
 }
 
@@ -73,6 +95,7 @@ struct Person {
 let credits = [
     Person(name: "Samara", icon: URL(string: "https://github.com/ssalggnikool.png")!, role: "The maker", link: URL(string: "https://github.com/ssalggnikool")!),
     Person(name: "HAHALOSAH", icon: URL(string: "https://github.com/HAHALOSAH.png")!, role: "Bug fixes (thank you lots)", link: URL(string: "https://github.com/HAHALOSAH")!),
+    Person(name: "Serena", icon: URL(string: "https://github.com/NSAntoine.png")!, role: "Preferences code from Antoine", link: URL(string: "https://github.com/NSAntoine")!),
 ]
 
 fileprivate struct CreditsView: View {
@@ -89,12 +112,10 @@ fileprivate struct CreditsView: View {
                             .frame(width: 40, height: 40)
                             .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
-                            .padding(.trailing, 10)
                         
                     } else {
                         ProgressView()
                             .frame(width: 40, height: 40)
-                            .padding(.trailing, 10)
                     }
                     
                     VStack(alignment: .leading) {
@@ -107,14 +128,18 @@ fileprivate struct CreditsView: View {
                     }
                     
                     Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                        .imageScale(.medium)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
                 }
                 .padding(EdgeInsets(top: 7, leading: 7, bottom: 7, trailing: 7))
                 .background(
                     RoundedRectangle(cornerRadius: 14)
-                        .fill(Color.accentColor.opacity(0.1))
+                        .fill(Color.accentColor.opacity(0.3))
                         .overlay(
                             RoundedRectangle(cornerRadius: 14)
-                                .stroke(Color.accentColor.opacity(0.5), lineWidth: 1)
+                                .stroke(Color.accentColor.opacity(1), lineWidth: 1)
                         )
                 )
                 .padding(.vertical, 5)
