@@ -15,13 +15,13 @@ struct Sidebar: View {
     
     var body: some View {
         List {
-            Section(header: Header(title: "Homes")) {
+            Section(header: Header(title: .localized("Homes"))) {
                 FileTree(urls: [FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!], refreshCollectionView: $refreshCollectionView)
                 FileTree(urls: [FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!], refreshCollectionView: $refreshCollectionView)
                 FileTree(urls: [FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!], refreshCollectionView: $refreshCollectionView)
             }
             
-            Section(header: Header(title: "Added Folders")) {
+            Section(header: Header(title: .localized("Added Folders"))) {
                 ForEach(Preferences.addedFolders, id: \.self) { folderPath in
                     if let folderURL = URL(string: folderPath) {
                         FileTree(urls: [folderURL], refreshCollectionView: $refreshCollectionView)

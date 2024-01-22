@@ -1,0 +1,126 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Add Folder" : {
+      "comment" : "This is for the button to add a folder in the sidebar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Folder"
+          }
+        }
+      }
+    },
+    "Added Folders" : {
+      "comment" : "Title for the added folders section in the sidebar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added Folders"
+          }
+        }
+      }
+    },
+    "Copy Image" : {
+      "comment" : "This is an option in a context menu to copy the image to your clipboard",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Image"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "comment" : "Title for the default directories section in the sidebar ",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "No Images" : {
+      "comment" : "Will display when there's no images within a given directory",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Images"
+          }
+        }
+      }
+    },
+    "Open" : {
+      "comment" : "This is an option in a context menu to open the image in a default application",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open"
+          }
+        }
+      }
+    },
+    "Open with Preview" : {
+      "comment" : "This is an option in a context menu to open the image in Preview",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open with Preview"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "comment" : "This is an option in a a sidebar context menu to remove a folder from Added folders",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove"
+          }
+        }
+      }
+    },
+    "Reveal in Finder" : {
+      "comment" : "This is an option in a context menu to show the location of the image in Finder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reveal in Finder"
+          }
+        }
+      }
+    },
+    "Select a folder in the sidebar" : {
+      "comment" : "You will need to select a folder from the apps sidebar to start viewing images",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a folder in the sidebar"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
