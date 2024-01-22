@@ -32,6 +32,10 @@
 		3361C75D2B5DEEA9000EB0D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3361C75F2B5DF026000EB0D5 /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		3361C7612B5E1729000EB0D5 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		3361C7632B5E2CD8000EB0D5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3361C7642B5E2CDF000EB0D5 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		3361C7652B5E2CE6000EB0D5 /* packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = packages; sourceTree = "<group>"; };
+		3361C7662B5E2E39000EB0D5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		33DC86CB2B5BAD600061DAE6 /* Binder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC86CE2B5BAD600061DAE6 /* BinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderApp.swift; sourceTree = "<group>"; };
 		33DC86D02B5BAD600061DAE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,10 @@
 		33DC86C22B5BAD600061DAE6 = {
 			isa = PBXGroup;
 			children = (
+				3361C7662B5E2E39000EB0D5 /* .gitignore */,
+				3361C7632B5E2CD8000EB0D5 /* README.md */,
+				3361C7642B5E2CDF000EB0D5 /* Makefile */,
+				3361C7652B5E2CE6000EB0D5 /* packages */,
 				33DC86CD2B5BAD600061DAE6 /* Binder */,
 				33DC86CC2B5BAD600061DAE6 /* Products */,
 			);
