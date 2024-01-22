@@ -10,9 +10,10 @@ import SwiftUI
 
 struct CollectionView: View {
     var images: [URL]
-    @State var selectedImageIndex: Int?
+    @State private var selectedImageIndex: Int?
     @State private var thumbnails: [Int: Image] = [:]
-    @Binding var refresh: Bool // Add this binding
+    @Binding var refresh: Bool
+    @State private var searchText = ""
 
     var body: some View {
         if images.isEmpty {
@@ -23,7 +24,7 @@ struct CollectionView: View {
         } else {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: Preferences.thumbnailSize!))], spacing: 20) {
-                    ForEach(0..<images.count, id: \.self) { index in
+                    ForEach(filteredIndices, id: \.self) { index in
                         VStack {
                             if let thumbnail = thumbnails[index] {
                                 thumbnail
@@ -78,7 +79,6 @@ struct CollectionView: View {
                             }
                             
                         }
-
                     }
                 }
                 .id(refresh)
@@ -86,6 +86,18 @@ struct CollectionView: View {
                 .onChange(of: refresh) { _ in
                     thumbnails = [:]
                 }
+                .searchable(text: $searchText)
+            }
+        }
+    }
+
+    private var filteredIndices: [Int] {
+        if searchText.isEmpty {
+            return Array(0..<images.count)
+        } else {
+            return images.indices.filter { index in
+                let imageName = images[index].lastPathComponent.lowercased()
+                return imageName.contains(searchText.lowercased())
             }
         }
     }
@@ -110,6 +122,7 @@ struct CollectionView: View {
         selectedImageIndex = index
     }
 }
+
 
 // MARK: - Context Menu actions
 
