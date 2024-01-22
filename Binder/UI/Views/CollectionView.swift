@@ -83,6 +83,9 @@ struct CollectionView: View {
                 }
                 .id(refresh)
                 .padding()
+                .onChange(of: refresh) { _ in
+                    thumbnails = [:]
+                }
             }
         }
     }
