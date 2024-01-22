@@ -9,12 +9,11 @@ import SwiftUI
 import AppKit
 
 struct ContentView: View {
-    @State private var selectedURL: URL?
     @State private var refreshCollectionView = false
 
     var body: some View {
         NavigationView {
-            Sidebar(selectedURL: $selectedURL, refreshCollectionView: $refreshCollectionView)
+            Sidebar(refreshCollectionView: $refreshCollectionView)
             
             Text("Select a folder in the sidebar")
                 .foregroundColor(.secondary)

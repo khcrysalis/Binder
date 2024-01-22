@@ -13,4 +13,7 @@ enum Preferences {
     
     @CodableStorage(key: "thumbnailSize", defaultValue: 150, handler: nil)
     static var thumbnailSize: CGFloat?
+    
+    @CodableStorage(key: "AddedFolders", defaultValue: [])
+    static var addedFolders: [String]
 }

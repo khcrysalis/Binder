@@ -12,6 +12,7 @@
 		3361C7532B5C1809000EB0D5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361C7522B5C1809000EB0D5 /* Preferences.swift */; };
 		3361C7552B5C1838000EB0D5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361C7542B5C1838000EB0D5 /* Storage.swift */; };
 		3361C7572B5D0A10000EB0D5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361C7562B5D0A10000EB0D5 /* CollectionView.swift */; };
+		3361C75B2B5D709F000EB0D5 /* FileTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361C75A2B5D709F000EB0D5 /* FileTree.swift */; };
 		33DC86CF2B5BAD600061DAE6 /* BinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC86CE2B5BAD600061DAE6 /* BinderApp.swift */; };
 		33DC86D12B5BAD600061DAE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC86D02B5BAD600061DAE6 /* ContentView.swift */; };
 		33DC86D32B5BAD620061DAE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DC86D22B5BAD620061DAE6 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		3361C7522B5C1809000EB0D5 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		3361C7542B5C1838000EB0D5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		3361C7562B5D0A10000EB0D5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		3361C75A2B5D709F000EB0D5 /* FileTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTree.swift; sourceTree = "<group>"; };
 		33DC86CB2B5BAD600061DAE6 /* Binder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC86CE2B5BAD600061DAE6 /* BinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderApp.swift; sourceTree = "<group>"; };
 		33DC86D02B5BAD600061DAE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,13 +49,30 @@
 			isa = PBXGroup;
 			children = (
 				33DC86D02B5BAD600061DAE6 /* ContentView.swift */,
-				3361C7562B5D0A10000EB0D5 /* CollectionView.swift */,
-				3361C7502B5BFD37000EB0D5 /* Sidebar.swift */,
 				3361C74D2B5BFD04000EB0D5 /* Image+Attributes.swift */,
+				3361C75C2B5D714B000EB0D5 /* Views */,
+				3361C7592B5D7086000EB0D5 /* Preferences */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3361C7592B5D7086000EB0D5 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
 				3361C7522B5C1809000EB0D5 /* Preferences.swift */,
 				3361C7542B5C1838000EB0D5 /* Storage.swift */,
 			);
-			path = UI;
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		3361C75C2B5D714B000EB0D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3361C7502B5BFD37000EB0D5 /* Sidebar.swift */,
+				3361C7562B5D0A10000EB0D5 /* CollectionView.swift */,
+				3361C75A2B5D709F000EB0D5 /* FileTree.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		33DC86C22B5BAD600061DAE6 = {
@@ -163,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33DC86D12B5BAD600061DAE6 /* ContentView.swift in Sources */,
+				3361C75B2B5D709F000EB0D5 /* FileTree.swift in Sources */,
 				3361C74E2B5BFD04000EB0D5 /* Image+Attributes.swift in Sources */,
 				3361C7572B5D0A10000EB0D5 /* CollectionView.swift in Sources */,
 				3361C7532B5C1809000EB0D5 /* Preferences.swift in Sources */,
@@ -228,7 +248,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -285,7 +305,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -310,6 +330,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samiiau.Binder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -335,6 +356,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samiiau.Binder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
