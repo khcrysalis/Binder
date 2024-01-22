@@ -28,3 +28,4 @@ fileprivate extension Preferences {
         Bundle.preferredLocalizationBundle = .makeLocalizationBundle(preferredLanguageCode: newValue)
     }
 }
+

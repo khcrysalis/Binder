@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About %@"
+          }
+        }
+      }
+    },
     "Add Folder" : {
       "comment" : "This is for the button to add a folder in the sidebar",
       "extractionState" : "manual",
@@ -86,7 +96,7 @@
       }
     },
     "Remove" : {
-      "comment" : "This is an option in a a sidebar context menu to remove a folder from Added folders",
+      "comment" : "This is an option in the sidebar context menu to remove a folder from Added folders",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -117,6 +127,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select a folder in the sidebar"
+          }
+        }
+      }
+    },
+    "Version %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
           }
         }
       }
