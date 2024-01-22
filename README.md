@@ -35,12 +35,12 @@ Go to the [releases](https://github.com/ssalggnikool/Binder/releases) page, and 
     <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/HAHALOSAH.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
     <b><a href="https://github.com/HAHALOSAH">HAHALOSAH</a></b>
     <br>
-    <sub>Bug fixes (thank you logs)</sub>
+    <sub>Bug fixes (thank you lots)</sub>
 </p>
 
 <p align="left">
     <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/NSAntoine.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
     <b><a href="https://github.com/NSAntoine">Serena</a></b>
     <br>
-    <sub>Bug fixes (thank you logs)</sub>
+    <sub>Preferences code from Antoine</sub>
 </p>
