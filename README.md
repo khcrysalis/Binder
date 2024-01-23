@@ -10,6 +10,14 @@
 
 A light-weight, macOS native image viewer.
 
+## Why make Binder?
+I stumbled across an app named [Art Book](https://github.com/xjbeta/Art-Book) but it was extremely outdated and had crashing problems, and due to that I thought it would be nice to write my own from the ground up and made for newer macOS versions.
+
+**Whats the point**
+Finder doesn't neccessarily have a good way of viewing images, and in my opinion what it currently does for its grid / preview doesnt do enough for me personally, so I thought of making an experience where the images are easy to view and easy to look at.
+
+Though some people may not agree and may just use Finder anyway, but that's completely up to them.
+
 ## Installation
 Go to the [releases](https://github.com/ssalggnikool/Binder/releases) page, and download the `.dmg` for your system.
 
