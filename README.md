@@ -28,7 +28,6 @@ Go to the [releases](https://github.com/ssalggnikool/Binder/releases) page, and 
       - This is for the simple volume icon, this is not needed but optional.
 
 2. Run `make package`
-    - This will try to sign it with an identity of `0`, it will appear it failed with `make: *** [package] Error 2`, but it will still create the dmg.
     
 ## Credits
 
