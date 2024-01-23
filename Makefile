@@ -12,19 +12,14 @@ package: check_dependencies
 	# Build
 	@set -o pipefail; \
 		xcodebuild -jobs $(shell sysctl -n hw.ncpu) -project 'Binder.xcodeproj' -scheme Binder -configuration Release -sdk macosx -derivedDataPath $(BINDERTMP) \
-		CODE_SIGNING_ALLOWED=NO DSTROOT=$(BINDERTMP)/install ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO
+		DSTROOT=$(BINDERTMP)/install ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO
 	
 	@rm -rf $(BINDER_STAGE_DIR)/
 	@mkdir -p $(BINDER_STAGE_DIR)/Payload
 	@mv $(BINDER_APP_DIR) $(BINDER_STAGE_DIR)/Payload/Binder.app
 
 	# Package
-	@echo $(BINDERTMP)
-	@echo $(BINDER_STAGE_DIR)
-
-	@ln -sf $(BINDER_STAGE_DIR)/Payload Payload
-
-	# Delete previous app bundle, if it exists
+	@echo $(BINDERTMP)      
 	@rm -rf packages
 
 	# Move new app bundle to package directory
@@ -32,6 +27,7 @@ package: check_dependencies
 	@mv $(BINDER_STAGE_DIR)/Payload/Binder.app packages/Binder.app
 	@rm -rf $(BINDERTMP)
 	@rm -rf Payload
+	@codesign -f -s - packages/Binder.app --preserve-metadata=entitlements
 	
 	# Make DMG
 	@rm -rf packages/*.dmg

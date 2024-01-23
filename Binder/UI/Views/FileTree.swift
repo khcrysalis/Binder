@@ -25,13 +25,13 @@ struct FileItem: View {
     let url: URL
     @State private var isExpanded: Bool = false
     @State private var sortedSubdirectories: [String] = []
+    @State private var isSubdirectoriesLoading = false
     @Binding var refreshCollectionView: Bool
 
     @State private var imageFiles: [URL] = []
 
-    private func updateImageFiles() {
-        self.imageFiles = url.getAllImageFiles()
-    }
+    private func updateImageFiles() { self.imageFiles = url.getAllImageFiles() }
+    
     var body: some View {
         DisclosureGroup(
             isExpanded: $isExpanded,
@@ -51,20 +51,18 @@ struct FileItem: View {
                         )
                     }
                 )
-
-
             }
         )
         .onAppear {
             self.updateImageFiles()
             Task {
-                await loadSubdirectories()
+                await throttledLoadSubdirectories()
             }
         }
         .onChange(of: isExpanded) { newValue in
             if newValue {
                 Task {
-                    await loadSubdirectories()
+                    await throttledLoadSubdirectories()
                 }
             }
         }
@@ -72,15 +70,52 @@ struct FileItem: View {
             self.updateImageFiles()
         }
     }
+}
+
+extension FileItem {
+    private func throttledLoadSubdirectories() async {
+        guard !isSubdirectoriesLoading else {
+            return
+        }
+
+        isSubdirectoriesLoading = true
+        await loadSubdirectories()
+        isSubdirectoriesLoading = false
+    }
     
+    private actor SubdirectoriesManager {
+        private var subdirectories: [String] = []
+
+        func append(_ element: String) {
+            subdirectories.append(element)
+        }
+
+        func getSortedSubdirectories() -> [String] {
+            return subdirectories.sorted()
+        }
+    }
+
     private func loadSubdirectories() async {
         do {
-            let subs = try FileManager.default.contentsOfDirectory(atPath: url.path)
-                .filter {
-                    let isDirectoryKey = try? URL(fileURLWithPath: url.appendingPathComponent($0).path).resourceValues(forKeys: [.isDirectoryKey])
-                    return isDirectoryKey?.isDirectory == true && !$0.hasPrefix(".")
+            let subdirectoryContents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isDirectoryKey], options: .skipsHiddenFiles)
+
+            let subdirectoriesManager = SubdirectoriesManager()
+
+            await withTaskGroup(of: Void.self) { group in
+                for subitemURL in subdirectoryContents {
+                    guard let isDirectoryKey = try? subitemURL.resourceValues(forKeys: [.isDirectoryKey]),
+                          isDirectoryKey.isDirectory == true
+                    else {
+                        continue
+                    }
+
+                    group.addTask {
+                        await subdirectoriesManager.append(subitemURL.lastPathComponent)
+                    }
                 }
-            sortedSubdirectories = subs.sorted()
+            }
+
+            sortedSubdirectories = await subdirectoriesManager.getSortedSubdirectories()
         } catch {
             print("Error loading subdirectories: \(error)")
         }
