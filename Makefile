@@ -31,4 +31,4 @@ package: check_dependencies
 	
 	# Make DMG
 	@rm -rf packages/*.dmg
-	@create-dmg --overwrite --identity=0 packages/Binder.app packages
+	-@create-dmg --overwrite --identity=0 packages/Binder.app packages
