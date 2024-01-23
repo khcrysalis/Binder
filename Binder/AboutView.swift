@@ -43,7 +43,6 @@ struct AboutView: View {
                 Divider()
                 HStack {
                     customButton(action: showWebsite, label: "Source")
-                    customButton(action: showInfo, label: "Wiki")
                 }
             }
             .padding()
@@ -72,11 +71,6 @@ struct AboutView: View {
     func showWebsite() {
         let website = URL(string: "https://github.com/ssalggnikool/Binder")!
         NSWorkspace.shared.open(website)
-    }
-    
-    func showInfo() {
-        let docs = URL(string: "https://github.com/ssalggnikool/Binder")!
-        NSWorkspace.shared.open(docs)
     }
 }
 
