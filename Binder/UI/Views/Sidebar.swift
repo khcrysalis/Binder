@@ -65,11 +65,13 @@ struct Sidebar: View {
         folderPicker.canChooseDirectories = true
         folderPicker.canChooseFiles = false
         folderPicker.allowsMultipleSelection = false
-        
-        folderPicker.begin { response in
+
+        let window = NSApplication.shared.windows.first
+
+        folderPicker.beginSheetModal(for: window!) { response in
             if response == .OK, let pickedFolder = folderPicker.urls.first {
-                addFolderToPreferences(folderURL: pickedFolder)
-                addedFoldersChanged = UUID()
+                self.addFolderToPreferences(folderURL: pickedFolder)
+                self.addedFoldersChanged = UUID()
             }
         }
     }
